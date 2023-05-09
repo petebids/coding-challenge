@@ -1,0 +1,13 @@
+spring:
+  main:
+    web-application-type: servlet # used for debugging the interim data structure stored in h2 - see https://www.baeldung.com/spring-boot-h2-database on how to access
+    # set to none if you just want this to run the cli process and exit instead of hanging
+  h2:
+    console.enabled: true
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password # normally I would not include these in source code but as it is just mock data, I think this is ok
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
